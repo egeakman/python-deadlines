@@ -47,18 +47,9 @@
                 <description>
                     <![CDATA[
                     <div class="h-event">
-   						<p class="p-name">{{ conf.conference | xml_escape }} {{ conf.year }}</p>
-						<p class="p-summary">Conference in <span class="p-location">{{conf.place | xml_escape }}</span>
-                        <time class="dt-start" datetime="{{ conf.start }}">{% translate_file dates/pretty_dates.html start=conf.start %}</time>
-                        <time class="dt-end" datetime="{{ conf.end }}">{% translate_file dates/pretty_dates.html end=conf.end %}</time></p>
-
-                        <p class="p-description">Call for Papers Deadline:
-                        <time class="dt-deadline" datetime="{{ cfp }}">{{ cfp | date: "%Y-%m-%d %H:%M:%S" }}</time>
-                        {% if conf.timezone %}{{ conf.timezone | xml_escape }}{% else %}AoE{% endif %}</p>
-
-                        {% if conf.twitter %}
-                        <p class="p-organizer">Twitter: @{{ conf.twitter }}</p>
-                        {% endif %}
+                        <p>&#128205; <span class="p-location">{{ conf.place | xml_escape }}</span> &#183; <time class="dt-start" datetime="{{ conf.start }}">{% translate_file dates/pretty_dates.html start=conf.start end=conf.end %}</time></p>
+                        <p>&#128221; CfP Deadline: <time class="dt-deadline" datetime="{{ cfp }}">{% translate_file dates/pretty_dates.html start=cfp end=cfp %}</time></p>
+                        {% if conf.cfp_link %}<p><a href="{{ conf.cfp_link }}">Submit your proposal &#8594;</a></p>{% endif %}
                     </div>
                     ]]>
                 </description>

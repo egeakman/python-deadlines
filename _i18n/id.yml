@@ -14,6 +14,7 @@ global:
   ru: 'Русский'
   cfp: 'Undangan Partisipasi'
   cfp_ext: 'CFP diperpanjang dari'
+  subscribe: 'Berlangganan'
 titles:
   default: 'Tenggat Waktu Konferensi Python'
   archive: 'Konferensi Python Sebelumnya'
@@ -46,6 +47,7 @@ header:
   series: 'Seri'
   resources: 'Sumber Daya'
   formatter: 'Format App'
+  course: 'Kursus Email'
   articles: 'Artikel untuk Memulai'
 conference:
   title: 'Tenggat Waktu Konferensi'

@@ -14,6 +14,7 @@ global:
   ru: 'Русский'
   cfp: 'Приглашение к участию'
   cfp_ext: 'CFP продлен с'
+  subscribe: 'Подписаться'
 titles:
   default: 'Дедлайны конференций Python'
   archive: 'Прошедшие конференции Python'
@@ -46,6 +47,7 @@ header:
   series: 'Серии'
   resources: 'Ресурсы'
   formatter: 'Форматировщик приложения'
+  course: 'Email-курс'
   articles: 'Статьи для начала'
 conference:
   title: 'Дедлайны конференций'

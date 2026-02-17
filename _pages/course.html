@@ -1,0 +1,313 @@
+---
+title: 'From Zero to CfP: Email Course'
+author: Jesper Dramsch
+description: 'A free 5-lesson email course to help you submit your first Python conference talk proposal'
+namespace: course
+permalink: /course/
+permalink_de: /kurs/
+permalink_es: /curso/
+permalink_fr: /cours/
+permalink_pt-br: /curso/
+permalink_id: /kursus/
+permalink_hi: /course/
+permalink_zh-cn: /course/
+permalink_ru: /course/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include head.html %}
+		<style>
+			.course-hero {
+				background: linear-gradient(135deg, #4B8BBE 0%, #306998 100%);
+				color: #fff;
+				padding: 4rem 1rem;
+				text-align: center;
+			}
+			.course-hero h1 {
+				font-size: 2.4rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				color: #fff;
+			}
+			.course-hero p,
+			.course-hero .lead {
+				text-align: center;
+				font-size: 1.25rem;
+				margin-bottom: 2rem;
+				opacity: 0.95;
+			}
+			.course-form {
+				max-width: 480px;
+				margin: 0 auto;
+			}
+			.course-form input[type="email"] {
+				width: 100%;
+				padding: 0.75rem 1rem;
+				font-size: 1rem;
+				border: 2px solid rgba(255,255,255,0.3);
+				border-radius: 0.375rem;
+				margin-bottom: 0.75rem;
+				background: rgba(255,255,255,0.15);
+				color: #fff;
+			}
+			.course-form input[type="email"]::placeholder {
+				color: rgba(255,255,255,0.7);
+			}
+			.course-form input[type="email"]:focus {
+				outline: none;
+				border-color: #FFD43B;
+				background: rgba(255,255,255,0.25);
+			}
+			.course-form button[type="submit"] {
+				width: 100%;
+				padding: 0.75rem 1rem;
+				font-size: 1.1rem;
+				font-weight: 600;
+				border: none;
+				border-radius: 0.375rem;
+				cursor: pointer;
+			}
+			.course-section {
+				padding: 3rem 1rem;
+			}
+			.course-section h2 {
+				font-size: 1.8rem;
+				font-weight: 700;
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+			.course-timeline {
+				position: relative;
+				max-width: 640px;
+				margin: 0 auto;
+				padding-left: 3rem;
+			}
+			.timeline-item {
+				position: relative;
+				padding-bottom: 2rem;
+			}
+			.timeline-item:last-child {
+				padding-bottom: 0;
+			}
+			/* Line connecting to the next node */
+			.timeline-item:not(:last-child)::before {
+				content: "";
+				position: absolute;
+				left: -1.9rem;
+				top: 40%;
+				bottom: -2rem;
+				width: 3px;
+				background: #4B8BBE;
+				z-index: 0;
+			}
+			/* Line connecting from the previous node */
+			.timeline-item:not(:first-child)::after {
+				content: "";
+				position: absolute;
+				left: -1.9rem;
+				top: 0;
+				height: 40%;
+				width: 3px;
+				background: #4B8BBE;
+				z-index: 0;
+			}
+			.timeline-item:last-child::after {
+				background: linear-gradient(180deg, #4B8BBE, #306998);
+			}
+			.timeline-node, .timeline-node-goal {
+				position: absolute;
+				left: -3rem;
+				top: 50%;
+				transform: translateY(-60%);
+				width: 2.2rem;
+				height: 2.2rem;
+				color: #fff;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.1rem;
+				z-index: 1;
+				box-shadow: 0 0 0 4px var(--bg-primary, #fff);
+			}
+			.timeline-node {
+				background: #4B8BBE;
+			}
+			.timeline-node-goal {
+				background: #306998;
+			}
+			.timeline-content {
+				background: var(--bg-card, #fff);
+				border: 1px solid var(--border-primary, #dee2e6);
+				border-radius: 0.5rem;
+				padding: 1.25rem 1.5rem;
+			}
+			.timeline-content h3 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 0;
+			}
+			.who-section {
+				background: var(--bg-secondary, #f8f9fa);
+			}
+			.who-section ul {
+				max-width: 640px;
+				margin: 0 auto;
+				list-style: none;
+				padding: 0;
+				text-align: left;
+			}
+			.who-section ul li {
+				padding: 0.5rem 0;
+				font-size: 1.05rem;
+				text-align: left;
+			}
+			.who-section ul li::before {
+				content: "\2713\00a0";
+				color: #10ac84;
+				font-weight: 700;
+			}
+			.course-bottom-cta {
+				background: linear-gradient(135deg, #306998 0%, #4B8BBE 100%);
+				color: #fff;
+				padding: 3rem 1rem;
+				text-align: center;
+			}
+			.course-bottom-cta h2 {
+				color: #fff;
+				margin-bottom: 0.75rem;
+			}
+			.course-bottom-cta p {
+				text-align: center;
+				opacity: 0.95;
+				margin-bottom: 1.5rem;
+			}
+			.post-course-note {
+				max-width: 640px;
+				margin: 0 auto;
+				text-align: center;
+				color: var(--text-secondary, #6c757d);
+				font-size: 0.95rem;
+				padding-top: 1rem;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root:not([data-theme="light"]) .course-form input[type="email"] {
+					background: rgba(0,0,0,0.25);
+				}
+				:root:not([data-theme="light"]) .course-form input[type="email"]:focus {
+					background: rgba(0,0,0,0.35);
+				}
+			}
+			[data-theme="dark"] .course-form input[type="email"] {
+				background: rgba(0,0,0,0.25);
+			}
+			[data-theme="dark"] .course-form input[type="email"]:focus {
+				background: rgba(0,0,0,0.35);
+			}
+		</style>
+	</head>
+	<body>
+		{% include header.html %}
+
+		<!-- Hero Section -->
+		<section class="course-hero">
+			<div class="container">
+				<h1>From Zero to CfP</h1>
+				<p class="lead">A free 5-lesson email course to help you submit your first Python conference talk proposal</p>
+				<form
+					action="https://buttondown.com/api/emails/embed-subscribe/python-deadlines"
+					method="post"
+					class="course-form embeddable-buttondown-form"
+					referrerpolicy="unsafe-url"
+				>
+					<input type="email" name="email" placeholder="you@example.com" required />
+					<input type="hidden" name="tag" value="cfp-course" />
+					<button type="submit" class="btn btn-warning btn-lg">Start the Free Course</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- Course Outline -->
+		<section class="course-section">
+			<div class="container">
+				<h2>What You'll Learn</h2>
+				<div class="course-timeline">
+					<div class="timeline-item">
+						<span class="timeline-node"><i class="fa-solid fa-envelope"></i></span>
+						<div class="timeline-content">
+							<h3>Why you already know enough to give a conference talk</h3>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<span class="timeline-node"><i class="fa-solid fa-envelope"></i></span>
+						<div class="timeline-content">
+							<h3>Finding the right conference for your first submission</h3>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<span class="timeline-node"><i class="fa-solid fa-envelope"></i></span>
+						<div class="timeline-content">
+							<h3>Writing a CfP that review committees love</h3>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<span class="timeline-node"><i class="fa-solid fa-envelope"></i></span>
+						<div class="timeline-content">
+							<h3>From "accepted" to stage-ready</h3>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<span class="timeline-node"><i class="fa-solid fa-envelope"></i></span>
+						<div class="timeline-content">
+							<h3>Open CfPs right now + weekly deadline digest</h3>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<span class="timeline-node-goal"><i class="fa-solid fa-flag-checkered"></i></span>
+						<div class="timeline-content">
+							<h3>Present at a Python conference</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Who Is This For -->
+		<section class="course-section who-section">
+			<div class="container">
+				<h2>Who Is This For?</h2>
+				<ul>
+					<li>You've thought about speaking at a conference but haven't submitted yet</li>
+					<li>You've attended Python conferences and want to give back to the community</li>
+					<li>You have expertise to share but aren't sure how to write a compelling proposal</li>
+					<li>You want practical, step-by-step guidance from idea to accepted talk</li>
+				</ul>
+				<p class="post-course-note">After the course, you'll receive our weekly digest of new Python conference deadlines.</p>
+			</div>
+		</section>
+
+		<!-- Bottom CTA -->
+		<section class="course-bottom-cta">
+			<div class="container">
+				<h2>Get Your First Talk Accepted</h2>
+				<p>Join hundreds of Python developers who turned their knowledge into conference talks.</p>
+				<form
+					action="https://buttondown.com/api/emails/embed-subscribe/python-deadlines"
+					method="post"
+					class="course-form embeddable-buttondown-form"
+					referrerpolicy="unsafe-url"
+				>
+					<input type="email" name="email" placeholder="you@example.com" required />
+					<input type="hidden" name="tag" value="cfp-course" />
+					<button type="submit" class="btn btn-warning btn-lg">Start the Free Course</button>
+				</form>
+			</div>
+		</section>
+
+		<footer>{% include_cached footer.html %}</footer>
+		{% include sneks.html %}
+	</body>
+</html>
