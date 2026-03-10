@@ -801,50 +801,13 @@ jobs:
             echo "::warning::Failed to apply filters"
           }
 
-      - name: Create filter suggestion issue (fallback)
+      - name: Log unapplied filter suggestion
         if: steps.apply_api.outputs.success == 'false' || vars.CHANGEDETECTION_URL == ''
-        uses: actions/github-script@v8
         env:
-          CONF_URL: ${{ needs.zone-check.outputs.url }}
           CONF_NAME: ${{ needs.zone-check.outputs.conference }}
-          TRIAGE_REASON: ${{ needs.triage.outputs.triage_reason }}
           TRIAGE_FILTERS: ${{ needs.triage.outputs.suggested_filters }}
-          WATCH_UUID: ${{ needs.zone-check.outputs.watch_uuid }}
-        with:
-          script: |
-            const url = process.env.CONF_URL;
-            const conference = process.env.CONF_NAME;
-            const reason = process.env.TRIAGE_REASON || "Noise detected";
-            const filters = process.env.TRIAGE_FILTERS || "";
-            const watchUuid = process.env.WATCH_UUID;
-
-            if (!filters || filters === 'none') return;
-
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'filter-suggestion',
-            });
-
-            const existing = issues.find(i => i.title.includes(conference));
-
-            if (existing) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: existing.number,
-                body: `### Noise detected\n**Reason:** ${reason}\n**Filters:** \`${filters}\``
-              });
-            } else {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: `🔇 Filter suggestions: ${conference}`,
-                labels: ['filter-suggestion', 'automated'],
-                body: `**Conference:** ${conference}\n**URL:** ${url}\n**Watch UUID:** \`${watchUuid}\`\n\n### Reason\n${reason}\n\n### Suggested Filters\n\`\`\`\n${filters}\n\`\`\``
-              });
-            }
+        run: |
+          echo "::warning title=Filter Not Applied::Could not apply filters for ${CONF_NAME}: ${TRIAGE_FILTERS}"
 
   # Stage 2: Full analysis with Claude Code Action (needs file editing tools)
   analyze-update:
@@ -890,8 +853,12 @@ jobs:
               git rebase --abort 2>/dev/null || true
               if ! git merge origin/main --no-edit; then
                 git merge --abort 2>/dev/null || true
-                echo "::error title=Branch Sync Failed::Could not rebase or merge with main"
-                exit 1
+                echo "::warning title=Merge Conflict::Auto-resolving conflicts in favor of main"
+                if ! git merge origin/main -X theirs --no-edit; then
+                  git merge --abort 2>/dev/null || true
+                  echo "::error title=Branch Sync Failed::Could not sync with main"
+                  exit 1
+                fi
               fi
             fi
           else
@@ -1109,8 +1076,12 @@ jobs:
               git rebase --abort 2>/dev/null || true
               if ! git merge origin/main --no-edit; then
                 git merge --abort 2>/dev/null || true
-                echo "::error title=Branch Sync Failed::Could not rebase or merge with main"
-                exit 1
+                echo "::warning title=Merge Conflict::Auto-resolving conflicts in favor of main"
+                if ! git merge origin/main -X theirs --no-edit; then
+                  git merge --abort 2>/dev/null || true
+                  echo "::error title=Branch Sync Failed::Could not sync with main"
+                  exit 1
+                fi
               fi
             fi
           else

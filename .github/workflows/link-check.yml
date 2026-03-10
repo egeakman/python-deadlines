@@ -9,6 +9,10 @@ on:
     paths:
       - '_data/conferences.yml'
 
+concurrency:
+  group: link-check
+  cancel-in-progress: true
+
 permissions:
   contents: read
   issues: write
@@ -36,10 +40,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Issue on Broken Links
+      - name: Find existing broken links issue
+        if: steps.lychee.outputs.exit_code != 0
+        id: find_issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ISSUE=$(gh issue list --label broken-links --state open --json number -q '.[0].number' 2>/dev/null || echo "")
+          echo "number=${ISSUE}" >> $GITHUB_OUTPUT
+
+      - name: Create or update broken links issue
         if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v6
         with:
           title: "🔗 Broken links detected"
           content-filepath: ./lychee/out.md
           labels: automated,broken-links
+          issue-number: ${{ steps.find_issue.outputs.number }}

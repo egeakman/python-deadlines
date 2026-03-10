@@ -100,8 +100,12 @@ jobs:
               git rebase --abort 2>/dev/null || true
               if ! git merge origin/main --no-edit; then
                 git merge --abort 2>/dev/null || true
-                echo "::error title=Branch Sync Failed::Could not rebase or merge with main"
-                exit 1
+                echo "::warning title=Merge Conflict::Auto-resolving conflicts in favor of main"
+                if ! git merge origin/main -X theirs --no-edit; then
+                  git merge --abort 2>/dev/null || true
+                  echo "::error title=Branch Sync Failed::Could not sync with main"
+                  exit 1
+                fi
               fi
             fi
           else
