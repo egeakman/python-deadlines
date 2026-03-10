@@ -16,6 +16,37 @@
     latitude: 37.7681571
     longitude: -122.392929
 
+- conference: PyCon Russia
+  year: 2026
+  link: https://www.pycon.ru/
+  cfp_link: https://www.pycon.ru/cfp
+  cfp: '2026-05-15 23:59:00'
+  timezone: Europe/Moscow
+  place: Moscow, Russia
+  start: 2026-07-24
+  end: 2026-07-25
+  sponsor: https://www.pycon.ru/partneram
+  sub: PY
+  location:
+  - title: PyCon Russia 2026
+    latitude: 55.7558
+    longitude: 37.6173
+
+- conference: PyCon Cameroon
+  year: 2026
+  link: https://pycon.pythoncameroon.org/
+  cfp_link: https://sessionize.com/pycon-camerooon-2026/
+  cfp: '2026-04-20 23:59:00'
+  timezone: Africa/Douala
+  place: Yaoundé, Cameroon
+  start: 2026-09-17
+  end: 2026-09-19
+  sub: PY
+  location:
+  - title: PyCon Cameroon 2026
+    latitude: 3.8689867
+    longitude: 11.5213344
+
 - conference: PyCon Australia
   alt_name: PyCon AU
   year: 2026
@@ -43,8 +74,9 @@
   cfp: '2026-03-16 11:00:00'
   timezone: America/Chicago
   place: Chicago, USA
-  start: 2026-09-14
-  end: 2026-09-18
+  start: 2026-08-24
+  end: 2026-08-28
+  sponsor: https://2026.djangocon.us/sponsors/
   mastodon: https://fosstodon.org/@djangocon
   sub: WEB
   location:
@@ -88,11 +120,14 @@
   link: https://www.scipy2026.scipy.org/
   cfp_link: https://pretalx.com/scipy-2026/cfp
   cfp: '2026-02-25 15:20:00'
+  cfp_ext: '2026-03-04 23:59:00'
+  tutorial_deadline: '2026-03-04 23:59:00'
   timezone: America/Chicago
   place: Minneapolis, USA
-  start: 2026-06-13
-  end: 2026-06-19
+  start: 2026-07-13
+  end: 2026-07-19
   sponsor: https://www.scipy2026.scipy.org/s/SciPy26-SponsorProspectus-wn87.pdf
+  finaid: https://docs.google.com/forms/d/e/1FAIpQLSdVD-AHPDcoVF4FPKdaWDTS9NyZtGym0KxoKf6AnWxv0MIiWg/viewform
   mastodon: https://mastodon.social/@SciPyConf
   sub: SCIPY
   location:
@@ -170,7 +205,8 @@
 - conference: North Bay Python
   year: 2026
   link: https://northbaypython.org/
-  cfp: '2026-02-14 00:00:00'
+  cfp_link: https://pretalx.northbaypython.org/nbpy-2026/cfp
+  cfp: '2026-02-14 09:00:00'
   timezone: America/Los_Angeles
   place: Petaluma, USA
   start: 2026-04-25
@@ -187,6 +223,7 @@
   link: https://euroscipy.org/
   cfp_link: https://euroscipy.org/call-for-proposals/
   cfp: '2026-02-08 23:59:00'
+  cfp_ext: '2026-03-01 23:59:00'
   tutorial_deadline: '2026-02-22 23:59:00'
   timezone: Europe/Berlin
   place: Krakow, Poland
@@ -200,7 +237,7 @@
 
 - conference: DjangoCon Europe
   year: 2026
-  link: https://2026.djangocon.eu/
+  link: https://djangocon.eu/
   cfp_link: https://pretalx.evolutio.pt/djangocon-europe-2026/cfp
   cfp: '2026-02-08 23:59:59'
   cfp_ext: '2026-02-15 23:59:00'
@@ -208,7 +245,7 @@
   place: Athens, Greece
   start: 2026-04-15
   end: 2026-04-19
-  sponsor: https://2026.djangocon.eu/call-for-sponsors/
+  sponsor: https://djangocon.eu/call-for-sponsors/
   sub: WEB
   location:
   - title: DjangoCon Europe 2026
@@ -404,11 +441,25 @@
   place: Barcelona, Spain
   start: 2026-11-06
   end: 2026-11-08
+  sponsor: https://2026.es.pycon.org/es/sponsors/
   sub: PY
   location:
   - title: PyCon Spain 2026
     latitude: 41.3828939
     longitude: 2.1774322
+
+- conference: Python Ho
+  year: 2026
+  link: https://2026.pythonho.com/
+  cfp: TBA
+  place: Ho, Ghana
+  start: 2026-10-23
+  end: 2026-10-24
+  sub: PY
+  location:
+  - title: Python Ho 2026
+    latitude: 6.6126598
+    longitude: 0.4688932
 
 - conference: PyCon Greece
   year: 2026
@@ -455,10 +506,22 @@
     latitude: 41.4996574
     longitude: -81.6936772
 
+- conference: Python Unplugged on PyTV
+  year: 2026
+  link: https://lp.jetbrains.com/python-unplugged/
+  cfp: None
+  place: Online
+  start: 2026-03-04
+  end: 2026-03-04
+  mastodon: https://fosstodon.org/@t_redactyl
+  bluesky: https://bsky.app/profile/pycharm.dev
+  sub: PY
+
 - conference: Python BarCamp Karlsruhe
   year: 2026
   link: https://barcamps.eu/pythonbarcamp-2026/
   cfp: None
+  timezone: Europe/Berlin
   place: Karlsruhe, Germany
   start: 2026-02-21
   end: 2026-02-22
@@ -482,17 +545,3 @@
   - title: FOSDEM 2026
     latitude: 50.8465573
     longitude: 4.351697
-
-- conference: SciPyData Japan
-  year: 2026
-  link: https://scipydata.connpass.com/event/364718/
-  cfp: None
-  timezone: Asia/Tokyo
-  place: Tokyo, Japan
-  start: 2026-01-24
-  end: 2026-01-24
-  sub: SCIPY,DATA
-  location:
-  - title: SciPyData Japan 2026
-    latitude: 35.718741949999995
-    longitude: 139.73118058112317
