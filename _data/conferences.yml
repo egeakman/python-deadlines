@@ -48,6 +48,20 @@
     latitude: 55.7558
     longitude: 37.6173
 
+- conference: Python Ho
+  year: 2026
+  link: https://2026.pythonho.com/
+  cfp: TBA
+  timezone: Africa/Accra
+  place: Ho, Ghana
+  start: 2026-10-23
+  end: 2026-10-24
+  sub: PY
+  location:
+  - title: Python Ho 2026
+    latitude: 6.6126598
+    longitude: 0.4688932
+
 - conference: Black Python Devs Leadership Summit
   year: 2026
   link: https://blackpythondevs.com/bpd-events/black-python-devs-leadership-summit-2026-ohio.html
@@ -93,6 +107,21 @@
   - title: PyOhio 2026
     latitude: 41.4996574
     longitude: -81.6936772
+
+- conference: Warsaw Python Pizza
+  year: 2026
+  link: https://warsaw.python.pizza/
+  cfp_link: https://forms.gle/5pqj68ES9ENaGPBf6
+  cfp: '2026-04-12 23:59:00'
+  place: Warsaw, Poland
+  start: 2026-05-09
+  end: 2026-05-09
+  sponsor: https://warsaw.python.pizza/#sponsors
+  sub: PY
+  location:
+  - title: Warsaw Python Pizza 2026
+    latitude: 52.2319581
+    longitude: 21.0067249
 
 - conference: PyCon Australia
   alt_name: PyCon AU
@@ -146,6 +175,17 @@
   - title: PyCon Austria 2026
     latitude: 47.8454821
     longitude: 16.5249288
+
+- conference: Python Unplugged on PyTV
+  year: 2026
+  link: https://lp.jetbrains.com/python-unplugged/
+  cfp: None
+  timezone: Europe/Berlin
+  place: Online
+  start: 2026-03-04
+  end: 2026-03-04
+  bluesky: https://bsky.app/profile/pycharm.dev
+  sub: PY
 
 - conference: PyCon Estonia
   alt_name: PyCon EE
@@ -335,22 +375,6 @@
     latitude: 17.426801501802966
     longitude: 78.37126527965896
 
-- conference: Python Pizza Ostrava
-  year: 2026
-  link: https://ostrava.python.pizza/
-  cfp: '2026-01-07 23:59:00'
-  timezone: Europe/Prague
-  place: Ostrava, Czechia
-  start: 2026-02-21
-  end: 2026-02-21
-  twitter: pythonpizzaconf
-  mastodon: https://fosstodon.org/@pythonpizza
-  sub: PY
-  location:
-  - title: Python Pizza Ostrava 2026
-    latitude: 49.8349139
-    longitude: 18.2820084
-
 - conference: PyCon Italy
   alt_name: PyCon Italia
   year: 2026
@@ -421,25 +445,6 @@
     latitude: 30.2711286
     longitude: -97.7436995
 
-- conference: PyCon Namibia
-  alt_name: PyCon NA
-  year: 2026
-  link: https://na.pycon.org/
-  cfp_link: https://pretalx.com/pycon-namibia-2026/cfp
-  cfp: '2025-12-01 23:59:00'
-  cfp_ext: '2026-02-05 23:59:00'
-  timezone: Africa/Windhoek
-  place: Windhoek, Namibia
-  start: 2026-02-20
-  end: 2026-02-26
-  sponsor: https://na.pycon.org/sponsor/
-  twitter: PyConNA
-  sub: PY
-  location:
-  - title: PyCon Namibia 2026
-    latitude: -22.611456150000002
-    longitude: 17.05860104184979
-
 - conference: PythonAsia
   alt_name: PyCon APAC
   year: 2026
@@ -491,24 +496,12 @@
   start: 2026-11-06
   end: 2026-11-08
   sponsor: https://2026.es.pycon.org/es/sponsors/
+  bluesky: https://bsky.app/profile/es.pycon.org
   sub: PY
   location:
   - title: PyCon Spain 2026
     latitude: 41.3828939
     longitude: 2.1774322
-
-- conference: Python Ho
-  year: 2026
-  link: https://2026.pythonho.com/
-  cfp: TBA
-  place: Ho, Ghana
-  start: 2026-10-23
-  end: 2026-10-24
-  sub: PY
-  location:
-  - title: Python Ho 2026
-    latitude: 6.6126598
-    longitude: 0.4688932
 
 - conference: PyCon Greece
   year: 2026
@@ -554,29 +547,3 @@
   - title: PyCon Ghana 2026
     latitude: 5.5571096
     longitude: -0.2012376
-
-- conference: Python Unplugged on PyTV
-  year: 2026
-  link: https://lp.jetbrains.com/python-unplugged/
-  cfp: None
-  place: Online
-  start: 2026-03-04
-  end: 2026-03-04
-  mastodon: https://fosstodon.org/@t_redactyl
-  bluesky: https://bsky.app/profile/pycharm.dev
-  sub: PY
-
-- conference: Python BarCamp Karlsruhe
-  year: 2026
-  link: https://barcamps.eu/pythonbarcamp-2026/
-  cfp: None
-  timezone: Europe/Berlin
-  place: Karlsruhe, Germany
-  start: 2026-02-21
-  end: 2026-02-22
-  sponsor: https://barcamps.eu/pythonbarcamp-2026/sponsoren
-  sub: CAMP
-  location:
-  - title: Python BarCamp Karlsruhe 2026
-    latitude: 49.0068705
-    longitude: 8.4034195
